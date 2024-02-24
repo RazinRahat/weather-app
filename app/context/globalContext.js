@@ -7,6 +7,12 @@ const GlobalContextUpdate = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
     const [forecast, setForecast] = useState([]);
+    // const [geoCodedList, setGeoCodedList] = useState(defaultStates);
+    // const [inputValue, setInputValue] = useState("");
+
+    const [activeCityCoords, setActiveCityCoords] = useState([
+        51.752021, -1.257726,
+    ]);
 
     const [airQuality, setAirQuality] = useState({});
     const [fiveDayForecast, setFiveDayForecast] = useState({});
@@ -77,9 +83,9 @@ export const GlobalContextProvider = ({ children }) => {
             }}
         >
             <GlobalContextUpdate.Provider
-                // value={{
-                //     setActiveCityCoords,
-                // }}
+                value={{
+                    setActiveCityCoords,
+                }}
             >
                 {children}
             </GlobalContextUpdate.Provider>

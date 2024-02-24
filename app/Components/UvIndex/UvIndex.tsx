@@ -18,8 +18,6 @@ function UvIndex() {
 
     const uvIndexMax = uv_index_max[0].toFixed(0);
 
-    console.log(uvIndexMax);
-
     const uvIndexCategory = (uvIndex: number) => {
         if (uvIndex <= 2) {
             return {
