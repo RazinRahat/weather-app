@@ -5,6 +5,7 @@ import FeelsLike from "./Components/FeelsLike/FeelsLike";
 import FiveDayForecast from "./Components/FiveDayForecast/FiveDayForecast";
 import Humidity from "./Components/Humidity/Humidity";
 import Mapbox from "./Components/Mapbox/Mapbox";
+import { MapComponent } from "./Components/MapComponent/MapComponent";
 import Navbar from "./Components/Navbar";
 import Population from "./Components/Population/Population";
 import Pressure from "./Components/Pressure/Pressure";
@@ -49,7 +50,7 @@ export default function Home() {
             <Pressure />
           </div>
           <div className="mapbox-con mt-4 flex gap-4">
-            <Mapbox />
+            <MapComponent />
             <div className="states flex flex-col gap-3 flex-1">
               <h2 className="flex items-center gap-2 font-medium">
                 Top Large Cities

@@ -37,8 +37,6 @@ function Mapbox() {
       </div>
     );
   }
-  const lon = -0.118092 || 0
-  const lat = 51.509865 || 0
 
   return (
     <div className="flex-1 basis-[50%] border rounded-lg">
