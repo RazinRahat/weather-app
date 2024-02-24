@@ -13,13 +13,17 @@ export async function GET(req: NextRequest) {
         const lat = 40.7128;
         const lon = -74.006;
 
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-        
-        const res = await axios.get(url);
+        const dailyUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-        return NextResponse.json(res.data);
+        const dailyRes = await fetch(dailyUrl, {
+        next: { revalidate: 3600 },
+        });
+
+        const dailyData = await dailyRes.json();
+
+        return NextResponse.json(dailyData);
     } catch (error) {
-        console.log("Error fetching forecast data");
-        return new Response("Error fetching forecast data", { status: 500 });
+        console.log("Error in getting daily data ");
+        return new Response("Error in getting daily data ", { status: 500 });
     }
 }
